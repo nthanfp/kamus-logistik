@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 // Home
 Route::get('/', [HomeController::class, 'pageHome'])->name('home');
+
+// Dictionary
+Route::get('/dictionary/indonesia', [HomeController::class, 'pageHome'])->name('list-indonesia');
+Route::get('/dictionary/english', [HomeController::class, 'pageHome'])->name('list-english');
