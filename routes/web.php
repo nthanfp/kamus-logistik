@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DictionaryController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,5 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'pageHome'])->name('home');
 
 // Dictionary
-Route::get('/dictionary/indonesia', [HomeController::class, 'pageHome'])->name('list-indonesia');
+Route::get('/dictionary/indonesia', [DictionaryController::class, 'showListIndonesia'])->name('list-indonesia');
+Route::get('/dictionary/indonesia/{alphabet}', [DictionaryController::class, 'showListIndonesia'])->name('list-indonesia-alphabet');
 Route::get('/dictionary/english', [HomeController::class, 'pageHome'])->name('list-english');

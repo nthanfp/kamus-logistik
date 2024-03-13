@@ -1,91 +1,74 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'Indonesia')
 
 @section('content')
     <div class="container my-4">
         <div class="row">
             <div class="col-2">
-                <ul class="list-group">
-                    <li class="list-group-item">A</li>
-                    <li class="list-group-item">B</li>
-                    <li class="list-group-item">C</li>
-                    <li class="list-group-item">D</li>
-                </ul>
+                <div class="list-group" style="max-height: 400px; overflow-y: auto;"><a
+                        href="{{ route('list-indonesia') }}"
+                        class="list-group-item list-group-item-action">All</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'a']) }}"
+                        class="list-group-item list-group-item-action">A</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'b']) }}"
+                        class="list-group-item list-group-item-action">B</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'c']) }}"
+                        class="list-group-item list-group-item-action">C</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'd']) }}"
+                        class="list-group-item list-group-item-action">D</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'e']) }}"
+                        class="list-group-item list-group-item-action">E</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'f']) }}"
+                        class="list-group-item list-group-item-action">F</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'g']) }}"
+                        class="list-group-item list-group-item-action">G</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'h']) }}"
+                        class="list-group-item list-group-item-action">H</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'i']) }}"
+                        class="list-group-item list-group-item-action">I</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'j']) }}"
+                        class="list-group-item list-group-item-action">J</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'k']) }}"
+                        class="list-group-item list-group-item-action">K</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'l']) }}"
+                        class="list-group-item list-group-item-action">L</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'm']) }}"
+                        class="list-group-item list-group-item-action">M</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'n']) }}"
+                        class="list-group-item list-group-item-action">N</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'o']) }}"
+                        class="list-group-item list-group-item-action">O</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'p']) }}"
+                        class="list-group-item list-group-item-action">P</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'q']) }}"
+                        class="list-group-item list-group-item-action">Q</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'r']) }}"
+                        class="list-group-item list-group-item-action">R</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 's']) }}"
+                        class="list-group-item list-group-item-action">S</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 't']) }}"
+                        class="list-group-item list-group-item-action">T</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'u']) }}"
+                        class="list-group-item list-group-item-action">U</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'v']) }}"
+                        class="list-group-item list-group-item-action">V</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'w']) }}"
+                        class="list-group-item list-group-item-action">W</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'x']) }}"
+                        class="list-group-item list-group-item-action">X</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'y']) }}"
+                        class="list-group-item list-group-item-action">Y</a>
+                    <a href="{{ route('list-indonesia-alphabet', ['alphabet' => 'z']) }}"
+                        class="list-group-item list-group-item-action">Z</a>
+                </div>
             </div>
             <div class="col-10">
                 <ul class="list-group">
-                    <li class="list-group-item">Air</li>
-                    <li class="list-group-item">Aman</li>
-                    <li class="list-group-item">Akan</li>
-                    <li class="list-group-item">Antah</li>
+                    @foreach ($words as $word)
+                        <li class="list-group-item">{{ $word->indonesian }}</li>
+                    @endforeach
                 </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container my-4">
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                        aria-expanded="true" aria-controls="collapseOne">
-                        Accordion Item #1
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
-                        plugin adds the appropriate classes that we use to style each element. These classes control the
-                        overall
-                        appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
-                        custom CSS or overriding our default variables. It's also worth noting that just about any HTML can
-                        go
-                        within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Accordion Item #2
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
-                        collapse
-                        plugin adds the appropriate classes that we use to style each element. These classes control the
-                        overall
-                        appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
-                        custom CSS or overriding our default variables. It's also worth noting that just about any HTML can
-                        go
-                        within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Accordion Item #3
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                        collapse
-                        plugin adds the appropriate classes that we use to style each element. These classes control the
-                        overall
-                        appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with
-                        custom CSS or overriding our default variables. It's also worth noting that just about any HTML can
-                        go
-                        within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                </div>
             </div>
         </div>
     </div>

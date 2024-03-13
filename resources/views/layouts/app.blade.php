@@ -19,9 +19,10 @@
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f3f3f3f5">
         <div class="container container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="{{ asset('logistics.png') }}" alt="Logo" width="24" height="24" class="d-inline-block align-text-top">
+                <img src="{{ asset('logistics.png') }}" alt="Logo" width="24" height="24"
+                    class="d-inline-block align-text-top">
                 {{ config('app.name', 'Kamus Logistik') }}
-              </a>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,13 +30,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Indonesia</a>
+                        <a class="nav-link" href="{{ route('list-indonesia') }}">Indonesia</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inggris</a>
+                        <a class="nav-link" href="{{ route('list-english') }}">Inggris</a>
                     </li>
                 </ul>
             </div>
