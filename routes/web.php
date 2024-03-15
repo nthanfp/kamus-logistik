@@ -21,7 +21,8 @@ Route::get('/', [HomeController::class, 'pageHome'])->name('home');
 // Dictionary
 Route::get('/dictionary/indonesia', [DictionaryController::class, 'showListIndonesia'])->name('list-indonesia');
 Route::get('/dictionary/indonesia/{alphabet}', [DictionaryController::class, 'showListIndonesiaByAlphabet'])->name('list-indonesia-alphabet');
-Route::get('/dictionary/english', [HomeController::class, 'pageHome'])->name('list-english');
+Route::get('/dictionary/english', [DictionaryController::class, 'showListEnglish'])->name('list-english');
+Route::get('/dictionary/english/{alphabet}', [DictionaryController::class, 'showListEnglishByAlphabet'])->name('list-english-alphabet');
 
 // Word
 Route::get('/word/{id}', [DictionaryController::class, 'showWordDetail'])->name('word-detail');
