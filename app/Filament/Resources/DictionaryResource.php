@@ -10,6 +10,8 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Forms\Set;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -25,9 +27,21 @@ class DictionaryResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('indonesian')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->live()
+                    ->afterStateUpdated(fn (Set $set, ?string $state) => $set('indonesian_slug', Str::slug($state))),
                 Forms\Components\TextInput::make('english')
                     ->required()
+                    ->maxLength(255)
+                    ->live()
+                    ->afterStateUpdated(fn (Set $set, ?string $state) => $set('english_slug', Str::slug($state))),
+                Forms\Components\TextInput::make('indonesian_slug')
+                    ->required()
+                    ->unique(ignoreRecord: true)
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('english_slug')
+                    ->required()
+                    ->unique(ignoreRecord: true)
                     ->maxLength(255),
                 Forms\Components\RichEditor::make('indonesian_definition')
                     ->required(),

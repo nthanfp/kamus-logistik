@@ -13,8 +13,10 @@ class Dictionary extends Model
 
     protected $fillable = [
         'indonesian',
+        'indonesian_slug',
         'indonesian_definition',
         'english',
+        'english_slug',
         'english_definition',
     ];
 

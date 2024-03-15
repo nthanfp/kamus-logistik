@@ -11,8 +11,10 @@ class CreateDictionaryTable extends Migration
         Schema::create('dictionary', function (Blueprint $table) {
             $table->id();
             $table->string('indonesian');
+            $table->string('indonesian_slug')->unique();
             $table->text('indonesian_definition');
             $table->string('english');
+            $table->string('english_slug')->unique();
             $table->text('english_definition');
             $table->timestamps();
         });
