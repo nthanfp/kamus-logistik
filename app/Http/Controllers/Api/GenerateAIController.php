@@ -36,6 +36,17 @@ class GenerateAIController extends Controller
             // Iterate over each dictionary entry in the response and save it
             $insertedIds = [];
             foreach ($parsedResponse['dictionary'] as $entry) {
+                // Check if the slug already exists in the database
+                $existingEntry = Dictionary::where('indonesian_slug', $entry['indonesian_slug'])
+                    ->orWhere('english_slug', $entry['english_slug'])
+                    ->first();
+
+                // Skip entry creation if the slug already exists
+                if ($existingEntry) {
+                    continue;
+                }
+
+                // Create new entry if slug does not exist
                 $insertData = Dictionary::create([
                     'indonesian' => $entry['indonesian'],
                     'indonesian_slug' => $entry['indonesian_slug'],
