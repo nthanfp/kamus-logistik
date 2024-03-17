@@ -28,12 +28,12 @@ class DictionaryResource extends Resource
                 Forms\Components\TextInput::make('indonesian')
                     ->required()
                     ->maxLength(255)
-                    ->live()
+                    ->live(debounce: 250)
                     ->afterStateUpdated(fn (Set $set, ?string $state) => $set('indonesian_slug', Str::slug($state))),
                 Forms\Components\TextInput::make('english')
                     ->required()
                     ->maxLength(255)
-                    ->live()
+                    ->live(debounce: 250)
                     ->afterStateUpdated(fn (Set $set, ?string $state) => $set('english_slug', Str::slug($state))),
                 Forms\Components\TextInput::make('indonesian_slug')
                     ->required()
