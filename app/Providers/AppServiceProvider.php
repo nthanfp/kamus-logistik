@@ -4,8 +4,8 @@ namespace App\Providers;
 
 use App\Services\OpenAIService;
 use Illuminate\Support\ServiceProvider;
-use Livewire;
 use Illuminate\Support\Facades\Route;
+use Livewire\Livewire;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,9 +24,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
-        Livewire::setScriptRoute(function ($handle) {
-    return Route::get('/vendor/livewire/livewire.js', $handle);
-});
+        // Laravel
+        // Livewire::setScriptRoute(function ($handle) {
+        //     return Route::get('/vendor/livewire/livewire.js', $handle);
+        // });
+
+        Livewire::setUpdateRoute(function ($handle) {
+            return Route::post(config('constants.PATH_TO_LARAVEl') . '/livewire/update', $handle);
+        });
     }
 }
