@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Services\OpenAIService;
 use Illuminate\Support\ServiceProvider;
+use Livewire;
+use Illuminate\Support\Facades\Route;
 
 class AppServiceProvider extends ServiceProvider
 {
