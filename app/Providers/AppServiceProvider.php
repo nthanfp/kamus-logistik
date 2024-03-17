@@ -25,12 +25,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Laravel
-        // Livewire::setScriptRoute(function ($handle) {
-        //     return Route::get('/vendor/livewire/livewire.js', $handle);
-        // });
-
-        Livewire::setUpdateRoute(function ($handle) {
-            return Route::post(config('constants.PATH_TO_LARAVEl') . '/livewire/update', $handle);
+        Livewire::setScriptRoute(function ($handle) {
+            return Route::get('/vendor/livewire/livewire.js', $handle);
         });
+
+        // Livewire::setUpdateRoute(function ($handle) {
+        //     return Route::post(config('constants.PATH_TO_LARAVEl') . '/livewire/update', $handle);
+        // });
     }
 }
