@@ -28,9 +28,5 @@ class AppServiceProvider extends ServiceProvider
         Livewire::setScriptRoute(function ($handle) {
             return Route::get('/vendor/livewire/livewire.js', $handle);
         });
-
-        // Livewire::setUpdateRoute(function ($handle) {
-        //     return Route::post(config('constants.PATH_TO_LARAVEl') . '/livewire/update', $handle);
-        // });
     }
 }
